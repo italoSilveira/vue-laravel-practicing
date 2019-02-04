@@ -8,10 +8,10 @@
     v-model="drawer"
     width="260"
   >
-    <v-toolbar color="primary darken-1" dark>
+    <v-toolbar style="color: #193a9a">
       <img src="../static/m.png" height="36" alt="Vue Material Admin Template">
       <v-toolbar-title class="ml-0 pl-3">
-        <span class="hidden-sm-and-down">Vue Material</span>
+        <span class="hidden-sm-and-down">Vue Materials</span>
       </v-toolbar-title>
     </v-toolbar>
     <vue-perfect-scrollbar class="drawer-menu--scroll" :settings="scrollSettings">
