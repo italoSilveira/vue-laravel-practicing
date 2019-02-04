@@ -9,9 +9,9 @@
     width="260"
   >
     <v-toolbar style="color: #193a9a">
-      <img src="../static/m.png" height="36" alt="Vue Material Admin Template">
+      <img src="../static/m.png" height="36" alt="Bookaholics">
       <v-toolbar-title class="ml-0 pl-3">
-        <span class="hidden-sm-and-down">Vue Materials</span>
+        <span class="hidden-sm-and-down">Bookaholics</span>
       </v-toolbar-title>
     </v-toolbar>
     <vue-perfect-scrollbar class="drawer-menu--scroll" :settings="scrollSettings">
