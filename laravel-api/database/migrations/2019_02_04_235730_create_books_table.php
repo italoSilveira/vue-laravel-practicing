@@ -19,6 +19,7 @@ class CreateBooksTable extends Migration
             $table->longText('synopsis');
             $table->integer('pages');
             $table->string('isbn', 13);
+            $table->string('path');
             $table->timestamps();
         });
     }

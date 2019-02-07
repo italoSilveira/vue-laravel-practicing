@@ -22,6 +22,7 @@ class BooksController extends Controller
         $book->synopsis = $request->synopsis;
         $book->pages = $request->pages;
         $book->isbn = $request->isbn;
+        $book->path = $request->path;
         $book->save();
 
         return response()->json($book);
@@ -32,6 +33,7 @@ class BooksController extends Controller
         $book->synopsis = $request->synopsis;
         $book->pages = $request->pages;
         $book->isbn = $request->isbn;
+        $book->path = $request->path;
         $book->save();
 
         return response()->json($book);
