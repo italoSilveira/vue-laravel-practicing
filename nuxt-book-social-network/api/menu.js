@@ -1,6 +1,13 @@
 const Menu = [
   {header: 'Apps'},
   {
+    title: 'Book',
+    group: 'apps',
+    icon: 'book',
+    name: 'Book',
+    href: '/book'
+  },
+  {
     title: 'Dashboard',
     group: 'apps',
     icon: 'dashboard',
