@@ -4,6 +4,9 @@
       <v-layout row wrap>
         <!-- mini statistic start -->
         <v-flex lg3 sm6 xs12>
+          <image-uploader></image-uploader>
+        </v-flex>
+        <!-- <v-flex lg3 sm6 xs12>
           <mini-statistic
             icon="fa fa-facebook"
             title="100+"
@@ -39,7 +42,7 @@
           >
           </mini-statistic>
         </v-flex>
-        <!-- mini statistic  end -->
+        <!-- mini statistic  end ->
         <v-flex lg8 sm12 xs12>
           <v-widget title="Site Traffic" content-bg="white">
             <v-btn icon slot="widget-header-action">
@@ -91,7 +94,7 @@
             </div>
           </v-widget>
         </v-flex>
-        <!-- social/weather card start -->
+        <!-- social/weather card start ->
         <v-flex lg4 sm12 xs12>
           <profile-card>
           </profile-card>
@@ -119,7 +122,7 @@
           >
           </box-chart>
         </v-flex>
-        <!-- statistic section -->
+        <!-- statistic section ->
         <v-flex lg4 sm12 xs12>
           <linear-statistic
             title="Sales"
@@ -154,7 +157,7 @@
           >
           </linear-statistic>
         </v-flex>
-        <!-- Circle statistic -->
+        <!-- Circle statistic ->
         <v-flex lg4 sm12 xs12 v-for="(item,index) in trending" :key="'c-trending'+index">
           <circle-statistic
             :title="item.subheading"
@@ -166,7 +169,7 @@
           >
           </circle-statistic>
         </v-flex>
-        <!-- acitivity/chat widget -->
+        <!-- acitivity/chat widget ->
         <v-flex lg6 sm12 xs12>
           <chat-window height="308px"></chat-window>
         </v-flex>
@@ -192,13 +195,14 @@
         </v-flex>
         <v-flex lg5 sm12 xs12>
           <plain-table-order></plain-table-order>
-        </v-flex>
+        </v-flex> -->
       </v-layout>
     </v-container>
   </div>
 </template>
 
 <script>
+  import ImageUploader from '@/components/ImageUploader';
   import API from '@/api';
   import EChart from '@/components/chart/echart';
   import MiniStatistic from '@/components/widgets/statistic/MiniStatistic';
@@ -219,6 +223,7 @@
   export default {
     layout: 'dashboard',
     components: {
+      ImageUploader,
       VWidget,
       MiniStatistic,
       ChatWindow,
