@@ -4,30 +4,30 @@
         @dragleave="OnDragLeave"
         @dragover.prevent
         @drop="onDrop"
-        :class="{ dragging: isDragging }">
-        
-        <div class="upload-control" v-show="images.length">
-            <label for="file">Select a file</label>
-            <button @click="upload">Upload</button>
-        </div>
-
-
-        <div v-show="!images.length">
-            <i class="fa fa-cloud-upload"></i>
-            <p>Drag your images here</p>
-            <div>OR</div>
-            <div class="file-input">
+        :class="{ dragging: isDragging, upload:  !images.length}">
+        <div v-if="!images.length">
+            <div class="upload-control" v-show="images.length">
                 <label for="file">Select a file</label>
-                <input type="file" id="file" @change="onInputChange" multiple>
+            </div>
+
+
+            <div v-show="!images.length">
+                <i class="fa fa-cloud-upload"></i>
+                <p>Drag your images here</p>
+                <div>OR</div>
+                <div class="file-input">
+                    <label for="file">Select a file</label>
+                    <input type="file" id="file" @change="onInputChange" multiple>
+                </div>
             </div>
         </div>
-
-        <div class="images-preview" v-show="images.length">
-            <div class="img-wrapper" v-for="(image, index) in images" :key="index">
-                <img :src="image" :alt="`Image Uplaoder ${index}`" :width="width">
+        <div v-if="images.length">
+            <div v-for="(images, index) in images" :key="index">
+                <img :src="images" alt="Image Uplaoder" :width="width" :height="height">
             </div>
         </div>
     </div>
+
 </template>
 <script>
   export default {
@@ -36,7 +36,8 @@
         dragCount: 0,
         files: [],
         images: [],
-        width: '100px',
+        width: '500px',
+        height: '500px'
     }),
     methods: {
         OnDragEnter(e) {
@@ -83,19 +84,6 @@
                 i++;
             }
             return `${(Math.round(size * 100) / 100)} ${fSExt[i]}`;
-        },
-        upload() {
-            const formData = new FormData();
-            
-            this.files.forEach(file => {
-                formData.append('images[]', file, file.name);
-            });
-            axios.post('/images-upload', formData)
-                .then(response => {
-                    this.$toastr.s('All images uplaoded successfully');
-                    this.images = [];
-                    this.files = [];
-                })
         }
     }
   };
@@ -168,10 +156,6 @@
         justify-content: space-between;
         background: #fff;
         box-shadow: 5px 5px 20px #3e3737;
-    }
-
-    img {
-        max-height: 105px;
     }
 
     .details {
